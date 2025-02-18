@@ -1,17 +1,109 @@
-button {
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 2em;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 80svh;
+
+  font-size: min(3vw, 32px);
+}
+
+.button {
+  font-size: 1em;
   outline: none;
   background-color: #bfbfbf;
-  border: 2px solid #000;
+  border: 0.2em solid #000;
   color: #000;
-  padding: 15px 32px;
+  padding: 1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 6px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0.6em;
+  width: 6em;
+  height: 4em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
-button:hover {
+
+.button:disabled {
+  opacity: 0.8;
+  color: #666666;
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+.button--startStop:focus {
+  outline: solid #df636378 4px;
+}
+
+.button--startStop:hover:not(:disabled) {
   background-color: #df636378;
+}
+
+.button--startStop {
+  background-image: url('https://img.icons8.com/ios/452/record.png');
+}
+
+.button--startStop.button--active {
+  background-image: url('https://img.icons8.com/ios/452/stop.png');
+  border-color: #c00;
+}
+
+.button--play {
+  background-image: url('https://img.icons8.com/ios/452/play.png');
+}
+
+.button--play:focus {
+  outline: solid #63df6978 4px;
+}
+
+.button--play:hover:not(:disabled) {
+  background-color: #63df6978;
+}
+
+.button--reverse {
+  transform: rotate(180deg);
+}
+
+.button--play.button--active {
+  border-color: #3c6;
 }
