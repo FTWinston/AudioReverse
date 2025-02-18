@@ -32,6 +32,13 @@ ol, ul {
 	list-style: none;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+}
+
 .buttons {
   display: flex;
   gap: 2em;
@@ -39,8 +46,6 @@ ol, ul {
   justify-content: center;
   align-items: center;
   width: 80vw;
-  height: 80svh;
-
   font-size: min(3vw, 32px);
 }
 
